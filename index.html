@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- head code copied from previous lab.  Legend code copied and adapted from Lab 1 TGIS 503 -->
+  <meta charset="utf-8" />
+  <title>Access to Fresh Food Index</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='styles.css' />
+  <script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+</head>
+<body>
+  <center><h1 class="description">Access to Fresh Food Index for Thurston and Pierce Counties</h1>
+  <div id ="p">
+  <center><p>Below is an interactive map of an Access to Fresh Food Index based off of 2010 population data</p></center>
+  <center><p>Index scores are ranked from 2 which is the lowest access to fresh food to 10 which is the highest access to fresh food.  Factors taken into consideration include walking distance to Farmers' markets (km), distance to current transit stops (within 0.5 miles), low access to supermarkets and cars (from the USDA), and poverty rate per census block group in 2010 (also from the USDA). </p></center>
+  <center><p>Click anywhere in Thurston or Pierce county to find out what score that region recieved.</p></center>
+  <div id='map'></div>
+  <script type ="text/javascript" src="scripts.js"></script>
+  <div id="legend">
+  		<h3><center>Access to Fresh</center></h3>
+      <h3><center>Food Index Score</center></h3>
+  		<ul style="list-style-type:none">
+  			<li>
+  				<svg width="64" height="24">
+  					<rect x="34" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#00802b" fill-opacity=".4"/>
+  				</svg>
+  				<text>10 - Highest Access</text>
+  			</li>
+  			<li>
+        <li>
+  				<svg width="65" height="24">
+  					<rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#00ff55" fill-opacity=".5"/>
+  				</svg>
+  				<text>9</text>
+        <li>
+  				<svg width="65" height="24">
+  					<rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#99ffbb" fill-opacity=".5"/>
+  				</svg>
+  				<text>8</text>
+  			</li>
+        <li>
+          <svg width="65" height="24">
+            <rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#ffff80" fill-opacity=".5"/>
+          </svg>
+          <text>7</text>
+        </li>
+        <li>
+          <svg width="65" height="24">
+            <rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#ffff00" fill-opacity=".5"/>
+          </svg>
+          <text>6</text>
+        </li>
+        <li>
+          <svg width="65" height="24">
+            <rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#ff9900" fill-opacity=".5"/>
+          </svg>
+          <text>5</text>
+        </li>
+        <li>
+          <svg width="65" height="24">
+            <rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#cc7a00" fill-opacity=".5"/>
+          </svg>
+          <text>4</text>
+        </li>
+        <li>
+          <svg width="65" height="24">
+            <rect x="2" y="11" height="12" width="27" stroke="grey" stroke-width="3" fill="#ff704d" fill-opacity=".5"/>
+          </svg>
+          <text>3</text>
+        </li>
+        <li>
+          <svg width="64" height="24">
+            <rect x="34" y="11" height="12" width="27" stroke="grey" stroke-width="1.5" fill="#801a00" fill-opacity=".5"/>
+          </svg>
+          <text>2 - Lowest Access</text>
+        </li>
+  		</ul>
+  	</div>
+    <script>
+    var Legend =  new L.Control.Legend({         //Legend code and container code copied from TGIS 503 Lab 1.
+    		position: 'bottomleft',
+    	});
+
+    	mymap.addControl(Legend);
+    	$(".legend-container").append( $("#legend") );
+    </script>
+</body>
+</html>

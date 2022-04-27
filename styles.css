@@ -1,0 +1,44 @@
+body {
+  background-color: #ffeecc;
+  /* Color from W3 Schools HTML Color Picker */
+}
+
+#p {
+  background-color: #80ff80;
+  /* Color from W3 Schools HTML Color Picker */
+  padding: 0.01em;
+  margin-bottom:0.75em
+}
+
+#map {
+  width: auto;
+  height: 98vh;
+}
+
+#legend {
+		line-height: 0px;
+		background: white;
+		opacity: 0.8;
+		padding:5px 25px 5px 0px;
+	}
+
+.class1 {
+  border-top: 3px solid red;
+}
+
+.class2 {
+  border-top: 3px solid orange;
+}
+
+.class3 {
+  border-top: 3px solid yellow;
+}
+
+.boundary {
+  border-top: 4px solid black;
+  opacity: .6
+}
+
+.description {
+  font-family: 'sans-serif', Arial;
+}
